@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rupitha | Elite Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --bg:#020617;
+  --card:#0f172a;
+  --text:#ffffff;
+  --accent:#38bdf8;
+}
+
+.light{
+  --bg:#ffffff;
+  --card:#f1f5f9;
+  --text:#020617;
+}
+
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  scroll-behavior:smooth;
+}
+
+/* SCROLL BAR */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-thumb{background:var(--accent)}
+
+/* NAV */
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  display:flex;
+  justify-content:space-between;
+  padding:15px 40px;
+  backdrop-filter:blur(10px);
+  background:rgba(0,0,0,0.4);
+  z-index:1000;
+}
+
+nav a{
+  color:var(--text);
+  margin-left:20px;
+  text-decoration:none;
+}
+
+.toggle{
+  cursor:pointer;
+}
+
+/* PROGRESS BAR */
+.progress{
+  position:fixed;
+  top:0;
+  left:0;
+  height:3px;
+  background:var(--accent);
+  width:0%;
+  z-index:2000;
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:40px;
+  text-align:center;
+}
+
+.hero img{
+  width:260px;
+  border-radius:20px;
+  box-shadow:0 0 30px rgba(56,189,248,0.4);
+}
+
+.hero h1{
+  font-size:48px;
+  background:linear-gradient(90deg,#38bdf8,#818cf8);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+/* TYPING */
+.typing{
+  border-right:3px solid var(--accent);
+  white-space:nowrap;
+  overflow:hidden;
+  width:0;
+  animation:typing 4s steps(30,end) forwards;
+}
+
+@keyframes typing{
+  from{width:0}
+  to{width:100%}
+}
+
+/* BUTTON */
+.btn{
+  padding:10px 20px;
+  background:linear-gradient(90deg,#38bdf8,#818cf8);
+  border-radius:8px;
+  color:#fff;
+  text-decoration:none;
+  display:inline-block;
+  margin-top:15px;
+  transition:0.3s;
+}
+.btn:hover{transform:scale(1.05)}
+
+/* SECTION */
+section{padding:80px 40px}
+h2{text-align:center;margin-bottom:40px}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+/* CARD */
+.card{
+  background:var(--card);
+  padding:20px;
+  border-radius:15px;
+  transition:0.3s;
+}
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 25px rgba(56,189,248,0.3);
+}
+
+/* SKILL BAR */
+.bar{height:8px;background:#1e293b;border-radius:5px;margin-top:5px}
+.fill{height:8px;background:var(--accent);border-radius:5px}
+
+/* SOCIAL FLOAT */
+.social{
+  position:fixed;
+  right:20px;
+  top:50%;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.social a{
+  color:white;
+  font-size:20px;
+}
+
+/* CONTACT */
+.contact{text-align:center}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  color:#94a3b8;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="progress" id="progress"></div>
+
+<!-- NAV -->
+<nav>
+  <h2>RUPITHA</h2>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <span class="toggle" onclick="toggleMode()">🌙</span>
+  </div>
+</nav>
+
+<!-- SOCIAL -->
+<div class="social">
+  <a href="#">🔗</a>
+  <a href="#">💻</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  
+  <img src="img.jpeg">
+
+  <div>
+    <h1>Grandhi Rupitha</h1>
+    <p class="typing">Data Analyst | AI Enthusiast</p>
+    <a href="#projects" class="btn">View Work</a>
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <p style="text-align:center;max-width:700px;margin:auto;">
+    Big Data Analytics student (CGPA 8.9) passionate about AI, analytics,
+    and building impactful data-driven solutions.
+  </p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Skills</h2>
+
+  <div class="grid">
+    <div class="card"><h3>Python</h3><div class="bar"><div class="fill" style="width:90%"></div></div></div>
+    <div class="card"><h3>ML</h3><div class="bar"><div class="fill" style="width:85%"></div></div></div>
+    <div class="card"><h3>SQL</h3><div class="bar"><div class="fill" style="width:85%"></div></div></div>
+    <div class="card"><h3>Power BI</h3><div class="bar"><div class="fill" style="width:80%"></div></div></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>HR Attrition Analysis</h3>
+      <p>Predict employee attrition using ML models.</p>
+    </div>
+
+    <div class="card">
+      <h3>Customer Churn Prediction</h3>
+      <p>End-to-end churn analytics system with dashboards.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <h2>Contact</h2>
+  <p>Email: ruprithagr@gmail.com</p>
+  <p>Phone: +91 9154023805</p>
+</section>
+
+<footer>
+  © 2026 Rupitha Portfolio
+</footer>
+
+<script>
+
+/* DARK MODE */
+function toggleMode(){
+  document.body.classList.toggle("light");
+}
+
+/* SCROLL PROGRESS */
+window.onscroll = function(){
+  let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  let scrolled = (winScroll / height) * 100;
+  document.getElementById("progress").style.width = scrolled + "%";
+};
+
+</script>
+
+</body>
+</html>
